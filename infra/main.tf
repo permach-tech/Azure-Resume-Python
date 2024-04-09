@@ -21,3 +21,14 @@ resource "azurerm_storage_account" "azure-sa" {
         index_document = "index.html"
     }
 }
+
+# add a index.html file
+
+resource "azurerm_storage_blob" "azure-blob" {
+    name                   = "index.html"
+    storage_account_name   = azurerm_storage_account.azure-sa.name
+    storage_container_name = "$web"
+    type                   = "Block"
+    source                 = "text/index.html"
+    source_content = "<h1>Hello, World this is Persell, ready to take on this Python Azure Resume challenge, let's fucking gooooo!</h1>"
+}
