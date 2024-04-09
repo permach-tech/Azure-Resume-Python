@@ -25,10 +25,11 @@ resource "azurerm_storage_account" "azure-sa" {
 # add a index.html file
 
 resource "azurerm_storage_blob" "azure-blob" {
-    name                   = "index.html"
-    storage_account_name   = azurerm_storage_account.azure-sa.name
-    storage_container_name = "$web"
-    type                   = "Block"
-    source                 = "text/index.html"
-    source_content = "<h1>Hello, World this is Persell, ready to take on this Python Azure Resume challenge, let's fucking gooooo!</h1>"
+    for_each = fileset(path.module, "frontend/**")
+
+  name                   = each.key
+  storage_account_name   = azurerm_storage_account.azure-sa.name
+  storage_container_name = "$web"
+  type                   = "Block"
+  source                 = each.key
 }
