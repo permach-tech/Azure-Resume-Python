@@ -1,7 +1,3 @@
-provider "azurerm" {
-  features {}
-}
-
 # Create a resource group
 resource "azurerm_resource_group" "azure_rg" {
   name = "rg-az-resume-python-prod-001"
