@@ -19,7 +19,6 @@ resource "azurerm_storage_account" "azure-sa" {
 }
 
 # add a index.html file
-
 resource "azurerm_storage_blob" "azure-blob" {
     for_each = fileset("${path.root}/frontend/", "**/*")
 
