@@ -1,12 +1,12 @@
 # Create a resource group
 resource "azurerm_resource_group" "azure_rg" {
-  name     = "var.resource_group_name"
-  location = "var.location"
+  name     = var.resource_group_name
+  location = var.location
 }
 
 # create a storage account
 resource "azurerm_storage_account" "azure-sa" {
-  name                     = "var.storage_account_name"
+  name                     = var.storage_account_name
   resource_group_name      = azurerm_resource_group.azure_rg.name
   location                 = azurerm_resource_group.azure_rg.location
   account_tier             = "Standard"
