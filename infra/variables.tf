@@ -9,7 +9,3 @@ variable "resource_group_name" {
 variable "storage_account_name" {
   description = "the name of the storage account."
 }
-
-variable "" {
-  
-}
