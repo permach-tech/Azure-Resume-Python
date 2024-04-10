@@ -25,11 +25,12 @@ resource "azurerm_storage_account" "azure-sa" {
 # add a index.html file
 
 resource "azurerm_storage_blob" "azure-blob" {
-    for_each = fileset(path.module, "frontend/**")
+    for_each = fileset("${path.root}/frontend/", "**/*")
 
   name                   = each.key
   storage_account_name   = azurerm_storage_account.azure-sa.name
   storage_container_name = "$web"
   type                   = "Block"
-  source                 = each.key
+  source                 = "${path.root}/frontend/${each.key}"
+  content_md5            = filemd5("${path.root}/frontend/${each.key}")
 }
