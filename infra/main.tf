@@ -14,18 +14,25 @@ resource "azurerm_storage_account" "azure-sa" {
   account_kind             = "StorageV2"
 
   static_website {
-    index_document = "index.html"
+    index_document     = "index.html"
+    error_404_document = "404.html"
   }
 }
 
-# add a index.html file
 resource "azurerm_storage_blob" "azure-blob" {
-  for_each = fileset("${path.root}/frontend/", "**/*")
+  for_each = fileset(path.module, "frontend/**")
 
-  name                   = each.key
+  name                   = trimprefix(each.key, "frontend/")
   storage_account_name   = azurerm_storage_account.azure-sa.name
   storage_container_name = "$web"
   type                   = "Block"
-  source                 = "${path.root}/frontend/${each.key}"
-  content_md5            = filemd5("${path.root}/frontend/${each.key}")
+  access_tier            = "Cool"
+  source                 = each.key
+  content_md5            = filemd5(each.key)
+  content_type           = ""
+}
+
+resource "azurerm_resource_group" "azure_api_rg" {
+  name     = var.api_resource_group_name
+  location = var.location
 }

@@ -9,3 +9,7 @@ variable "resource_group_name" {
 variable "storage_account_name" {
   description = "the name of the storage account."
 }
+
+variable "api_resource_group_name" {
+  description = "The name of the resource group in which the API will be created."
+}
