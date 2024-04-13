@@ -41,3 +41,7 @@ terraform.rc
 *.rar
 *.tar
 *.zip
+
+.python_packages
+__pycache__
+.venv
