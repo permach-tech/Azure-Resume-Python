@@ -17,3 +17,7 @@ variable "api_resource_group_name" {
 variable "api_storage_account_name" {
   description = "the name of the storage account for the API."
 }
+
+variable "cosmosdb_name" {
+  description = "The name of the CosmosDB account."
+}

@@ -16,24 +16,24 @@ resource "azurerm_service_plan" "api_sp" {
   name                = "asp-${var.api_resource_group_name}"
   location            = azurerm_resource_group.azure_rg.location
   resource_group_name = azurerm_resource_group.azure_api_rg.name
-  os_type = "Linux"
-  sku_name = "Y1"
+  os_type             = "Linux"
+  sku_name            = "Y1"
 }
 
 resource "azurerm_linux_function_app" "api_fa" {
-  name                      = "fa-${var.api_resource_group_name}"
-  location                  = azurerm_resource_group.azure_rg.location
-  resource_group_name       = azurerm_resource_group.azure_api_rg.name
-  storage_account_name      = azurerm_storage_account.api_sa.name
+  name                       = "fa-${var.api_resource_group_name}"
+  location                   = azurerm_resource_group.azure_rg.location
+  resource_group_name        = azurerm_resource_group.azure_api_rg.name
+  storage_account_name       = azurerm_storage_account.api_sa.name
   storage_account_access_key = azurerm_storage_account.api_sa.primary_access_key
-  service_plan_id           = azurerm_service_plan.api_sp.id
-  
+  service_plan_id            = azurerm_service_plan.api_sp.id
+
   site_config {
     application_stack {
       python_version = "3.8"
     }
     cors {
-        allowed_origins     = ["https://www.portal.azure.com"]
+      allowed_origins = ["https://www.portal.azure.com"]
     }
   }
 }
