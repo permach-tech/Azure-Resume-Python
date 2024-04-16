@@ -21,3 +21,7 @@ variable "api_storage_account_name" {
 variable "cosmosdb_name" {
   description = "The name of the CosmosDB account."
 }
+
+variable "cosmosdb_sql_db_name" {
+  description = "The name of the CosmosDB SQL database."
+}
