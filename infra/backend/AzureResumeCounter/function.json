@@ -14,28 +14,28 @@
     {
       "type": "http",
       "direction": "out",
-      "name": "res"
+      "name": "$return"
     },
     {
       "type": "cosmosDB",
-      "name": "inputDocument",
       "direction": "in",
-      "connectionStringSetting": "AzureCosmosDBConnectionString",
+      "name": "inputDocument",
       "databaseName": "AzureResume",
-      "collectionName": "Counter",
-      "partitionKey": "/id",
-      "id": "1"
+      "connection": "percosmosdbresumeprod_DOCUMENTDB",
+      "containerName": "Counter",
+      "id": "1",
+      "partitionKey": "1"
     },
     {
       "type": "cosmosDB",
+      "direction": "out",
       "name": "outputDocument",
       "databaseName": "AzureResume",
-      "partitionKey": "/id",
-      "collectionName": "Counter",
       "createIfNotExists": true,
-      "connectionStringSetting": "AzureCosmosDBConnectionString",
-      "direction": "out"
-  
+      "connection": "percosmosdbresumeprod_DOCUMENTDB",
+      "containerName": "Counter",
+      "partitionKey": "1",
+      "id": "1"
     }
   ]
 }
