@@ -14,3 +14,8 @@ See the live version of my resume [here](https://resume.per-tech.org/)
 - Azure
 - Bash
 - Git
+- GitHub Actions
+
+## Frontend
+
+The frontend static website is on an Azure Blob Storage Container where the HTML, CSS, Javascript and other resources for the site are stored.
