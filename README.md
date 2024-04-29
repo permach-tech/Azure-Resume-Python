@@ -33,6 +33,6 @@ The backend is a [Python Azure](https://www.learnpython.org/) Function that uses
 
 ## CI/CD
 
-- Created CI/CD action for the frontend, everytime a change is pushed to a file in infra/frontend, the changes are deployed and updated to the azure blob storage
-- Actions tested on VSCode via Github Action extension
-- Secrets stored in Github
+- Created CI/CD action for the frontend, everytime a change is pushed to a file in infra/frontend, the changes are deployed and updated to the azure blob storage.
+- Actions tested on VSCode via Github Action extension.
+- Secrets stored in Github.
