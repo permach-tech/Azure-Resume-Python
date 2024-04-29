@@ -30,3 +30,9 @@ The backend is a [Python Azure](https://www.learnpython.org/) Function that uses
 - Backend resources were deployed via Terraform in API.tf and Backend.tf
 - VSCode was used for local development and Azure extensions were used to deploy the function app to Azure.
 - CORS must be enabled to allow the javacript code in the browser to interact with the backend.
+
+## CI/CD
+
+- Created CI/CD action for the frontend, everytime a change is pushed to a file in infra/frontend, the changes are deployed and updated to the azure blob storage
+- Actions tested on VSCode via Github Action extension
+- Secrets stored in Github
