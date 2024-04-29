@@ -19,3 +19,4 @@ See the live version of my resume [here](https://resume.per-tech.org/)
 ## Frontend
 
 The frontend static website is on an Azure Blob Storage Container where the HTML, CSS, Javascript and other resources for the site are stored.
+- I took a college course on web development, so I was already familiar with the web design concept and langauge. I Ultimately used a template to help me out with the design (bonus points for the UT Dallas colors). 
