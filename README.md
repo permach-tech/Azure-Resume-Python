@@ -20,4 +20,5 @@ See the live version of my resume [here](https://resume.per-tech.org/)
 
 The frontend static website is on an Azure Blob Storage Container where the HTML, CSS, Javascript and other resources for the site are stored.
 - I took a college course on web development, so I was already familiar with the web design concept and langauge. I Ultimately used a template to help me out with the design (bonus points for the UT Dallas colors).
-- Used Javascript to make an API call to the Azure function to update the visitor count. This resource was very helpful in understanding the API call https://www.geeksforgeeks.org/javascript-fetch-method/
+- Used Javascript to make an API call to the Azure function to update the visitor count. This [resource](https://www.geeksforgeeks.org/javascript-fetch-method/
+) was very helpful in understanding the API call.
