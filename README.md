@@ -7,3 +7,10 @@ Hi everyone, this is my cloud resume challenge built in Azure. I utilized terraf
 ## Demo
 
 See the live version of my resume [here](https://resume.per-tech.org/)
+
+## Tools Used
+- VSCode
+- Terraform
+- Azure
+- Bash
+- Git
