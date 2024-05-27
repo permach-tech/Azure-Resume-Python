@@ -1,0 +1,35 @@
+name: deploy_frontend
+
+on:
+    push:
+        branches: [ main ]
+        paths: 
+          - 'infra/frontend/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: azure/login@v1
+      with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+    
+    
+    
+    - name: Upload to Azure blob storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: |
+            az storage blob upload-batch --account-name stazpythresume001 --overwrite --auth-mode login -d '$web' -s infra/frontend/ 
+            
+   # - name: Purge CDN endpoint
+   #   uses: azure/CLI@v1
+   #   with:
+   #     inlineScript: |
+   #        az cdn endpoint purge --content-paths  "/*" --profile-name ""   --name "" --resource-group ""
+
+  # Azure logout
+    - name: logout
+      run: |
+            az logout
